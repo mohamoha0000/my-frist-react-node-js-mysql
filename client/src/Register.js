@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -20,6 +21,9 @@ function Register() {
       <input placeholder="البريد" onChange={(e) => setEmail(e.target.value)} />
       <input type="password" placeholder="كلمة المرور" onChange={(e) => setPassword(e.target.value)} />
       <button onClick={register}>تسجيل</button>
+      <p>
+        لديك حساب بالفعل؟ <Link to="/login">تسجيل الدخول</Link>
+      </p>
     </div>
   );
 }
